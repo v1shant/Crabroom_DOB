@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+    <div>
+        <ul>
+            <% for(let i of dob){ %>
+               <li> <%= i.name %> </li>
+               <li> <%= i.dob %>  </li>
+               <li> <%= i.age %>  </li>
+            <% } %> 
+        </ul>
+    </div>
+    <form action="/create-dob" method="post">
+        <input type="text" name="name" placeholder="name" required>
+        <input type="datetime-local" name="dob" placeholder="date of birth" required>
+        <input type="number" name="age" placeholder="age" required>
+        <button id="submitForm" type="submit">Submit</button>
+    </form>
+
+    <script type="text/javascript" src="/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+    $("#submitForm").click(function() {
+        alert("The Form has been Submitted.");
+     });
+    </script>
+</body>
+</html>
